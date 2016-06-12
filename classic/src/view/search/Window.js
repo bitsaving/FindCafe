@@ -9,11 +9,12 @@ Ext.define('FindCafe.view.search.Window', {
     requires: [
         'Ext.container.Container',
         'Ext.form.Label',
-        'Ext.layout.container.Fit',
-        'Ext.layout.container.VBox'
+        'Ext.layout.container.Fit'
     ],
 
     title: '店舗詳細',
+
+    glyph: 'xf0f4@FontAwesome',
 
     width: '670px',
     height: '90%',
@@ -26,24 +27,20 @@ Ext.define('FindCafe.view.search.Window', {
         {
             xtype: 'container',
             margin: 20,
-            padding: 10,
+            padding: '0 10',
             cls: 'detail-container',
-            layout: 'vbox',
-            defaults: {
-                margin: '0 0 10 0'
-            },
+            scrollable: 'vertical',
+            height: '100%',
             items: [
                 {
                     xtype: 'label',
-                    style: 'font-size: 1.3em',
                     bind: {
-                        html: '<b class="caption">{record.name}<b>'
+                        html: '<h2 class="caption">{record.name}</h2>'
                     }
                 },
                 {
                     xtype: 'component',
                     style: 'width: 630px',
-                    margin: '10 0 20',
                     tpl: [
                         '<tpl for=".">',
                         '<img src="{.}"',
@@ -61,14 +58,14 @@ Ext.define('FindCafe.view.search.Window', {
                 {
                     xtype: 'label',
                     bind: {
-                        html: '<b class="caption">住所:</b><br> {record.address}'
+                        html: '<h3 class="caption"><i class="fa fa-home" aria-hidden="true"></i></h3> {record.address}'
                     }
                 },
                 {
                     xtype: 'component',
                     style: 'width: 600px',
                     tpl: [
-                        '<b class="caption">コメント:</b><br>',
+                        '<h3 class="caption"><i class="fa fa-comments" aria-hidden="true"></i></h3>',
                         '<tpl for=".">',
                         '「{.}」<br><br>',
                         '</tpl>'
@@ -82,7 +79,6 @@ Ext.define('FindCafe.view.search.Window', {
                     margin: '10 0',
                     bind: {
                         html: '{site_url}'
-                        //html:
                     }
                 }
             ]

@@ -78,9 +78,7 @@ Ext.define('FindCafe.view.CustomMap', {
     },
 
     redraw: function () {
-        console.log('redraw');
         if (this.map) {
-            console.log('redraw2');
             google.maps.event.trigger(this.map, 'resize');
         }
     },

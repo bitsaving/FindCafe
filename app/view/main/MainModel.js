@@ -15,7 +15,7 @@ Ext.define('FindCafe.view.main.MainModel', {
             var record = get('record');
             if (record && record.get('url')) {
                 return '<a href="' + record.get('url') + '" target="_blank" class="caption">' +
-                    '<i class="fa fa-external-link"></i> 店舗ページへ</a>';
+                    '<i class="fa fa-external-link"></i> 店舗ページへ</a><br><br>';
             }
             return null;
         }
