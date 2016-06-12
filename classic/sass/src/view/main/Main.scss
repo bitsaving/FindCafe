@@ -90,3 +90,21 @@
 .x-panel-header-navigation-horizontal {
     border-bottom: 1px solid #d0d0d0 !important;
 }
+
+.venue-window .x-window-body-default {
+    background-color: #efeff4 !important;
+    color: #4e595d !important;
+}
+
+.detail-container {
+    background-color: #fff;
+    box-shadow: #c7cdcf 0 1px 0 0;
+    border-radius: 3px;
+
+    .caption {
+        color: #204dcc;
+        //font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+}
+

@@ -7,63 +7,85 @@ Ext.define('FindCafe.view.search.Window', {
     xtype: 'venuewindow',
 
     requires: [
+        'Ext.container.Container',
         'Ext.form.Label',
+        'Ext.layout.container.Fit',
         'Ext.layout.container.VBox'
     ],
 
     title: '店舗詳細',
 
-    width: '600px',
+    width: '670px',
     height: '90%',
     modal: true,
 
-    layout: 'vbox',
-    padding: '20',
-
-    defaults: {
-        margin: '0 0 10 0'
-    },
+    layout: 'fit',
+    cls: 'venue-window',
 
     items: [
         {
-            xtype: 'label',
-            style: 'font-size: 1.2em',
-            bind: {
-                html: '<b>{record.name}<b>'
-            }
-        },
-        {
-            xtype: 'image',
-            bind: {
-                src: '{record.photo}'
+            xtype: 'container',
+            margin: 20,
+            padding: 10,
+            cls: 'detail-container',
+            layout: 'vbox',
+            defaults: {
+                margin: '0 0 10 0'
             },
-            height: '200px'
-        },
-        {
-            xtype: 'label',
-            bind: {
-                html: '<b>住所:</b><br> {record.address}'
-            }
-        },
-        {
-            xtype: 'component',
-            style: 'width: 550px',
-            tpl: [
-                '<b>コメント:</b><br>',
-                '<tpl for=".">',
-                '「{.}」<br>',
-                '</tpl>'
-            ].join(''),
-            bind: {
-                data: '{record.comments}'
-            }
-        },
-        {
-            xtype: 'label',
-            margin: '10 0',
-            bind: {
-                html: '<a href="{record.url}" target="_blank"><i class="fa fa-external-link"></i> 店舗ページへ</a>'
-            }
+            items: [
+                {
+                    xtype: 'label',
+                    style: 'font-size: 1.3em',
+                    bind: {
+                        html: '<b class="caption">{record.name}<b>'
+                    }
+                },
+                {
+                    xtype: 'component',
+                    style: 'width: 630px',
+                    margin: '10 0 20',
+                    tpl: [
+                        '<tpl for=".">',
+                        '<img src="{.}"',
+                        ' height="200px"',
+                        ' style="box-shadow: #c7cdcf 0 1px 0 0;',
+                        ' border-radius: 3px;',
+                        ' margin-right: 3px;',
+                        '"/>',
+                        '</tpl>'
+                    ].join(''),
+                    bind: {
+                        data: '{record.photos}'
+                    }
+                },
+                {
+                    xtype: 'label',
+                    bind: {
+                        html: '<b class="caption">住所:</b><br> {record.address}'
+                    }
+                },
+                {
+                    xtype: 'component',
+                    style: 'width: 600px',
+                    tpl: [
+                        '<b class="caption">コメント:</b><br>',
+                        '<tpl for=".">',
+                        '「{.}」<br><br>',
+                        '</tpl>'
+                    ].join(''),
+                    bind: {
+                        data: '{record.comments}'
+                    }
+                },
+                {
+                    xtype: 'label',
+                    margin: '10 0',
+                    bind: {
+                        html: '{site_url}'
+                        //html:
+                    }
+                }
+            ]
         }
     ]
 });
