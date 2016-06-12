@@ -3,17 +3,18 @@
  */
 @include extjs-tab-panel-ui(
     $ui: 'navigation',
-    $ui-tab-background-color: transparent,
-    $ui-tab-background-color-over: #505050,
-    $ui-tab-background-color-active: #303030,
+    //$ui-tab-background-color: transparent,
+    $ui-tab-background-color: #f7f7fa,
+    $ui-tab-background-color-over: #204dcc,
+    $ui-tab-background-color-active: #204dcc,
     $ui-tab-background-gradient: 'none',
     $ui-tab-background-gradient-over: 'none',
     $ui-tab-background-gradient-active: 'none',
-    $ui-tab-color: #acacac,
-    $ui-tab-color-over: #c4c4c4,
+    $ui-tab-color: #4e595d,
+    $ui-tab-color-over: #4e595d,
     $ui-tab-color-active: #fff,
-    $ui-tab-glyph-color: #acacac,
-    $ui-tab-glyph-color-over: #c4c4c4,
+    $ui-tab-glyph-color: #4e595d,
+    $ui-tab-glyph-color-over: #4e595d,
     $ui-tab-glyph-color-active: #fff,
     $ui-tab-glyph-opacity: 1,
     $ui-tab-border-radius: 0,
@@ -31,7 +32,7 @@
     $ui-tab-icon-width: 24px,
     $ui-tab-icon-height: 24px,
     $ui-tab-icon-spacing: 5px,
-    $ui-bar-background-color: #404040,
+    $ui-bar-background-color: #f7f7fa,
     $ui-bar-background-gradient: 'none',
     $ui-bar-padding: 0,
     $ui-strip-height: 0
@@ -80,4 +81,12 @@
 .x-panel-header-title-navigation > .x-title-text-navigation:after {
     top: 30px;
     right: -24px;
+}
+
+.x-panel-header-navigation-vertical {
+    border-right: 1px solid #d0d0d0 !important;
+}
+
+.x-panel-header-navigation-horizontal {
+    border-bottom: 1px solid #d0d0d0 !important;
 }

@@ -41,14 +41,14 @@ Ext.define('FindCafe.view.review.View', {
             type: 'numeric3d',
             position: 'left',
             fields: 'rating',
-            minimum: 5,
+            //minimum: 10,
             //maximum: 1,
             //majorTickSteps: 1,
             label: {
                 textAlign: 'right'
             },
             //renderer: 'onAxisLabelRender',
-            title: 'レビュー件数',
+            title: '評価',
             grid: {
                 odd: {
                     fillStyle: 'rgba(255, 255, 255, 0.06)'

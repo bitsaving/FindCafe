@@ -557,8 +557,9 @@
         "classic": {
             "toolkit": "classic",
             
-            "theme": "find-cafe",
-            
+//            "theme": "find-cafe",
+            "theme": "theme-triton",
+
             "sass": {
                 // "save": "classic/sass/save.scss"
             }

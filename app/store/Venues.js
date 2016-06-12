@@ -10,6 +10,13 @@ Ext.define('FindCafe.store.Venues', {
 
     model: 'FindCafe.model.Venue',
 
-    autoLoad: true
+    autoLoad: true,
+
+    sorters: [
+        {
+            property: 'rating',
+            direction: 'DESC'
+        }
+    ]
 
 });

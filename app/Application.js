@@ -5,15 +5,29 @@
  */
 Ext.define('FindCafe.Application', {
     extend: 'Ext.app.Application',
-    
+
+    requires: [
+        'Ext.dom.Helper'
+    ],
+
     name: 'FindCafe',
 
     stores: [
         // TODO: add global / shared stores here
     ],
-    
+
     launch: function () {
-        // TODO - Launch the application
+        var classic = Ext.toolkit === 'classic';
+        var tags = [
+            '<div style="position: fixed; right: 0; bottom: ',
+            classic ? '0' : '50px',
+            '; z-index: 999;">',
+            '<img width="100px" ',
+            //classic ? '' : ' width="150px" ',
+            'src="resources/images/Powered-by-Foursquare.png"/></div>'
+        ].join('');
+        var element = Ext.DomHelper.createDom(tags);
+        Ext.getBody().appendChild(element);
     },
 
     onAppUpdate: function () {
