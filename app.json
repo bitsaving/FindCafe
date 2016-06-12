@@ -55,7 +55,8 @@
      *      ]
      */
     "requires": [
-        "font-awesome"
+        "font-awesome",
+        "sencha-charts"
     ],
 
     /**
@@ -206,6 +207,9 @@
      *
      */
     "js": [
+        {
+            "path": "http://maps.googleapis.com/maps/api/js?libraries=geometry"
+        },
         {
             "path": "app.js",
             "bundle": true

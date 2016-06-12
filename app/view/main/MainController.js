@@ -9,13 +9,25 @@ Ext.define('FindCafe.view.main.MainController', {
 
     alias: 'controller.main',
 
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+    /**
+     * @param {Ext.view.View} component
+     * @param {Ext.data.Model} record
+     * @param {HTMLElement} item
+     * @param {Number} index
+     * @param {Ext.event.Event} e
+     */
+    onListItemClick: function (component, record, item, index, e) {
+        this.getViewModel().setData({
+            record: record
+        });
+
+        var window = Ext.create('FindCafe.view.venue.Window');
+        window.show();
     },
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
+    onSubItemClick: function () {
+        Ext.Msg.alert('Sencha Ext JS', 'Hello, World!');
+
     }
+
 });

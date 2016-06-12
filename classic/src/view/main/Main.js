@@ -10,16 +10,22 @@ Ext.define('FindCafe.view.main.Main', {
     xtype: 'app-main',
 
     requires: [
+        'Ext.layout.container.Fit',
+        'Ext.layout.container.boxOverflow.None',
+        'Ext.plugin.Responsive',
         'Ext.plugin.Viewport',
-        'Ext.window.MessageBox',
-
         'FindCafe.view.main.MainController',
         'FindCafe.view.main.MainModel',
-        'FindCafe.view.main.List'
+        'FindCafe.view.map.View',
+        'FindCafe.view.review.View',
+        'FindCafe.view.setting.View',
+        'FindCafe.view.venue.View'
     ],
 
     controller: 'main',
     viewModel: 'main',
+
+    plugins: 'viewport',
 
     ui: 'navigation',
 
@@ -76,29 +82,32 @@ Ext.define('FindCafe.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
+        title: '店舗',
         iconCls: 'fa-home',
         // The following grid shares a store with the classic version's grid as well!
+        layout: 'fit',
         items: [{
-            xtype: 'mainlist'
+            xtype: 'venue-view'
         }]
     }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        title: '地図',
+        iconCls: 'fa-map',
+        layout: 'fit',
+        items: [{
+            xtype: 'map-view'
+        }]
     }, {
-        title: 'Groups',
+        title: 'レビュー',
         iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        layout: 'fit',
+        items: [{
+            xtype: 'review-view'
+        }]
     }, {
-        title: 'Settings',
+        title: '設定',
         iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        items: [{
+            xtype: 'setting-view'
+        }]
     }]
 });
