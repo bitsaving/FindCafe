@@ -41,8 +41,8 @@ Ext.define('FindCafe.view.review.View', {
             type: 'numeric3d',
             position: 'left',
             fields: 'rating',
-            //minimum: 10,
-            //maximum: 1,
+            minimum: 3,
+            maximum: 10,
             //majorTickSteps: 1,
             label: {
                 textAlign: 'right'

@@ -28,6 +28,18 @@ Ext.define('FindCafe.view.main.MainController', {
     onSubItemClick: function () {
         Ext.Msg.alert('Sencha Ext JS', 'Hello, World!');
 
+    },
+
+    /**
+     * @param {Ext.tab.Panel} tabPanel
+     * @param {Ext.Component} newCard
+     * @param {Ext.Component} oldCard
+     */
+    onTabChange: function (tabPanel, newCard, oldCard) {
+        var view = newCard.down('map-view');
+        if (view) {
+            view.down('custom-map').redraw();
+        }
     }
 
 });

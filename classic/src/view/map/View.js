@@ -26,7 +26,4 @@ Ext.define('FindCafe.view.map.View', {
     layout: 'fit',
     frame: true
 
-    //listeners: {
-    //    afterrender: 'onMapViewAfterrender'
-    //}
 });

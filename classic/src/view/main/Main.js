@@ -109,5 +109,9 @@ Ext.define('FindCafe.view.main.Main', {
         items: [{
             xtype: 'setting-view'
         }]
-    }]
+    }],
+
+    listeners: {
+        tabchange: 'onTabChange'
+    }
 });

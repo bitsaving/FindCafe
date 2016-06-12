@@ -53,20 +53,36 @@ Ext.define('FindCafe.view.CustomMap', {
     },
 
     updateLocation: function (location) {
+        var me = this;
+
         if (!location) {
             return;
         }
 
         //var p = this.getLocation();
-        this.map = this.map || new google.maps.Map(this.el.dom, {
+        me.map = me.map || new google.maps.Map(this.el.dom, {
                 zoom: 14,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
-        this.map.panTo({
+        me.map.panTo({
             lat: location.latitude,
             lng: location.longitude
         });
-        this._renderMarkers();
+
+        // Redraw the map when resize the window
+        google.maps.event.addDomListener(window, 'resize', function () {
+            Ext.defer(me.redraw, 500, me);
+        });
+
+        me._renderMarkers();
+    },
+
+    redraw: function () {
+        console.log('redraw');
+        if (this.map) {
+            console.log('redraw2');
+            google.maps.event.trigger(this.map, 'resize');
+        }
     },
 
     _createMarkers: function (store) {

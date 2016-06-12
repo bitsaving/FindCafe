@@ -57,8 +57,9 @@ Ext.define('FindCafe.view.search.View', {
 
     columns: [
         {text: '店舗名', dataIndex: 'name', flex: 1, renderer: function (value, metaData) {
-            //metaData.style = "font-weight:bold;color:#2d5be3;";
-            metaData.style = "font-weight:bold;";
+            //metaData.style = "font-weight:bold;color:#204dcc;";
+            metaData.style = "color:#204dcc;";
+            //metaData.style = "font-weight:bold;";
             return value;
         }},
         {text: '住所', dataIndex: 'address', flex: 1 },
@@ -66,7 +67,8 @@ Ext.define('FindCafe.view.search.View', {
             return v + '件';
         }},
         {text: '評価', dataIndex: 'rating', width: 100, renderer: function (value, metaData) {
-            metaData.style = "font-weight:bold;color:#E91E63;";
+            //metaData.style = "font-weight:bold;color:#E91E63;";
+            metaData.style = "color:#E91E63;";
             return value;
         }}
     ],
