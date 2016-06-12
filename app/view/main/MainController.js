@@ -21,7 +21,7 @@ Ext.define('FindCafe.view.main.MainController', {
             record: record
         });
 
-        var window = Ext.create('FindCafe.view.venue.Window');
+        var window = Ext.create('FindCafe.view.search.Window');
         window.show();
     },
 

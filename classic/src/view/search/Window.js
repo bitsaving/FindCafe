@@ -1,7 +1,7 @@
 /**
  * Created by kawanoshinobu on 2016/04/30.
  */
-Ext.define('FindCafe.view.venue.Window', {
+Ext.define('FindCafe.view.search.Window', {
     extend: 'Ext.window.Window',
 
     xtype: 'venuewindow',

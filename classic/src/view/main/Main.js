@@ -18,8 +18,8 @@ Ext.define('FindCafe.view.main.Main', {
         'FindCafe.view.main.MainModel',
         'FindCafe.view.map.View',
         'FindCafe.view.review.View',
-        'FindCafe.view.setting.View',
-        'FindCafe.view.venue.View'
+        'FindCafe.view.search.View',
+        'FindCafe.view.setting.View'
     ],
 
     controller: 'main',
@@ -43,7 +43,7 @@ Ext.define('FindCafe.view.main.Main', {
             },
             flex: 0
         },
-        iconCls: 'fa-th-list'
+        iconCls: 'fa-coffee'
     },
 
     tabBar: {
@@ -82,12 +82,12 @@ Ext.define('FindCafe.view.main.Main', {
     },
 
     items: [{
-        title: '店舗',
-        iconCls: 'fa-home',
+        title: '検索',
+        iconCls: 'fa-search',
         // The following grid shares a store with the classic version's grid as well!
         layout: 'fit',
         items: [{
-            xtype: 'venue-view'
+            xtype: 'search-view'
         }]
     }, {
         title: '地図',

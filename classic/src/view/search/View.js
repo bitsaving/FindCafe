@@ -1,9 +1,9 @@
 /**
  * This view is an example list of people.
  */
-Ext.define('FindCafe.view.venue.View', {
+Ext.define('FindCafe.view.search.View', {
     extend: 'Ext.grid.Panel',
-    xtype: 'venue-view',
+    xtype: 'search-view',
 
     requires: [
         'Ext.button.Button',
@@ -12,8 +12,8 @@ Ext.define('FindCafe.view.venue.View', {
         'FindCafe.store.Venues'
     ],
 
-    title: '店舗',
-    glyph: 'xf015@FontAwesome',
+    title: '検索',
+    glyph: 'xf002@FontAwesome',
 
     store: {
         type: 'venues'
@@ -26,9 +26,12 @@ Ext.define('FindCafe.view.venue.View', {
             xtype: 'textfield',
             emptyText: '検索したいエリアを指定して下さい',
             label: '',
-            width: '300',
             maxWidth: '300',
             minWidth: '300'
+        },
+        {
+            xtype: 'button',
+            glyph: 'xf002@FontAwesome'
         },
         '->',
         {
@@ -53,13 +56,17 @@ Ext.define('FindCafe.view.venue.View', {
     ],
 
     columns: [
-        {text: '店舗名', dataIndex: 'name', flex: 1 },
+        {text: '店舗名', dataIndex: 'name', flex: 1, renderer: function (value, metaData) {
+            metaData.style = "font-weight:bold;color:#2d5be3;";
+            return value;
+        }},
         {text: '住所', dataIndex: 'address', flex: 1 },
         {text: 'レビュー', dataIndex: 'ratingSignals', width: 100, renderer: function (v) {
             return v + '件';
         }},
-        {text: '評価', dataIndex: 'rating', width: 100, renderer: function (v) {
-            return '<span style="color:#E91E63;">' + v + '</span>';
+        {text: '評価', dataIndex: 'rating', width: 100, renderer: function (value, metaData) {
+            metaData.style = "font-weight:bold;color:#E91E63;";
+            return value;
         }}
     ],
 
