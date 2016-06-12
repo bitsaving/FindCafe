@@ -106,6 +106,7 @@ Ext.define('FindCafe.view.main.Main', {
     }, {
         title: '設定',
         iconCls: 'fa-cog',
+        layout: 'fit',
         items: [{
             xtype: 'setting-view'
         }]

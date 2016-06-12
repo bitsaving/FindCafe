@@ -58,14 +58,14 @@ Ext.define('FindCafe.view.search.Window', {
                 {
                     xtype: 'label',
                     bind: {
-                        html: '<h3 class="caption"><i class="fa fa-home" aria-hidden="true"></i></h3> {record.address}'
+                        html: '<h3 class="caption">住所</h3> {record.address}'
                     }
                 },
                 {
                     xtype: 'component',
                     style: 'width: 600px',
                     tpl: [
-                        '<h3 class="caption"><i class="fa fa-comments" aria-hidden="true"></i></h3>',
+                        '<h3 class="caption">みんなのコメント</i></h3>',
                         '<tpl for=".">',
                         '「{.}」<br><br>',
                         '</tpl>'
