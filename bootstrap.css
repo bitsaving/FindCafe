@@ -5,5 +5,5 @@
  * to the most recently built CSS file for the application to allow index.html
  * in the development directory to load properly (i.e., "dev mode").
  */
-@import 'build/development/FindCafe/classic/resources/FindCafe-all.css';
+@import 'build/development/FindCafe/modern/resources/FindCafe-all.css';
 

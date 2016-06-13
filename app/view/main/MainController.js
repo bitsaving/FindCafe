@@ -40,6 +40,41 @@ Ext.define('FindCafe.view.main.MainController', {
         if (view) {
             view.down('custom-map').redraw();
         }
+    },
+
+    /**
+     * @param {Ext.dataview.DataView} component
+     * @param {Number} index
+     * @param {Ext.Element/Ext.dataview.component.DataItem} target
+     * @param {Ext.data.Model} record
+     * @param {Ext.event.Event} e
+     */
+    onListItemTap: function (component, index, target, record, e) {
+        var me = this,
+            page = me.lookup('stores');
+
+        me.getViewModel().setData({
+            record: record
+        });
+
+        page.animateActiveItem(1, {
+            type: 'slide',
+            direction: 'left'
+        });
+    },
+
+    /**
+     * @param {Ext.Button} component
+     * @param {Ext.EventObject} e
+     */
+    onTapBackButton: function (component, e) {
+        var me = this,
+            page = me.lookup('stores');
+
+        page.animateActiveItem(0, {
+            type: 'slide',
+            direction: 'right'
+        });
     }
 
 });

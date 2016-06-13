@@ -76,7 +76,7 @@ Ext.define('FindCafe.view.review.View', {
             label: {
                 field: 'ratingSignals',
                 display: 'insideEnd'
-                //renderer: 'onSeriesLabelRender'
+                //renderer: 'onRenderLabel'
             },
             tooltip: {
                 trackMouse: true,

@@ -1,29 +1,35 @@
 /**
- * Created by kawanoshinobu on 2016/04/30.
+ * Created by kawanoshinobu on 2016/04/24.
  */
-Ext.define('FindCafe.view.search.Window', {
-    extend: 'Ext.window.Window',
+Ext.define('FindCafe.view.main.Detail', {
+    extend: 'Ext.Container',
 
-    xtype: 'venuewindow',
+    xtype: 'detail',
 
-    requires: [
-        'Ext.container.Container',
-        'Ext.form.Label',
-        'Ext.layout.container.Fit'
-    ],
+    scrollable: true,
 
-    title: '店舗詳細',
-
-    glyph: 'xf0f4@FontAwesome',
-
-    width: '670px',
-    height: '90%',
-    modal: true,
+    width: '100%',
 
     layout: 'fit',
     cls: 'venue-window',
 
     items: [
+        {
+            xtype: 'titlebar',
+            docked: 'top',
+            cls: 'header',
+            title: '店舗詳細',
+            items: [
+                {
+                    xtype: 'button',
+                    iconCls: 'x-fa fa-chevron-left',
+                    ui: 'action',
+                    listeners: {
+                        tap: 'onTapBackButton'
+                    }
+                }
+            ]
+        },
         {
             xtype: 'container',
             margin: 10,

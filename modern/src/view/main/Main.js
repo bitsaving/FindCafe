@@ -10,52 +10,72 @@ Ext.define('FindCafe.view.main.Main', {
     xtype: 'app-main',
 
     requires: [
-        'Ext.MessageBox',
-
+        'FindCafe.view.main.Detail',
         'FindCafe.view.main.MainController',
         'FindCafe.view.main.MainModel',
-        'FindCafe.view.main.List'
+        'FindCafe.view.map.View',
+        'FindCafe.view.review.View',
+        'FindCafe.view.search.View',
+        'FindCafe.view.setting.View'
     ],
 
     controller: 'main',
     viewModel: 'main',
 
-    defaults: {
-        tab: {
-            iconAlign: 'top'
+    tabBar: {
+        layout: {
+            pack : 'center',
+            align: 'center'
         },
-        styleHtmlContent: true
+        docked: 'bottom',
+        defaults: {
+            iconAlign: 'top'
+        }
     },
+
+    scrollable: false,
 
     tabBarPosition: 'bottom',
 
     items: [
         {
-            title: 'Home',
-            iconCls: 'x-fa fa-home',
-            layout: 'fit',
-            // The following grid shares a store with the classic version's grid as well!
+            title: '検索',
+            iconCls: 'x-fa fa-search',
+            //layout: 'fit',
+            reference: 'stores',
+            layout: 'card',
             items: [{
-                xtype: 'mainlist'
+                xtype: 'search-view'
+            }, {
+                xtype: 'detail'
             }]
         },{
-            title: 'Users',
-            iconCls: 'x-fa fa-user',
-            bind: {
-                html: '{loremIpsum}'
-            }
+            title: '地図',
+            iconCls: 'x-fa fa-map',
+            layout: 'fit',
+            items: [
+                {
+                    xtype: 'map-view'
+                }
+            ]
         },{
-            title: 'Groups',
+            title: '評価',
             iconCls: 'x-fa fa-users',
-            bind: {
-                html: '{loremIpsum}'
-            }
+            layout: 'fit',
+            items: [
+                {
+                    xtype: 'review-view'
+                }
+            ]
         },{
-            title: 'Settings',
+            title: '設定',
             iconCls: 'x-fa fa-cog',
-            bind: {
-                html: '{loremIpsum}'
-            }
+            layout: 'fit',
+            items: [
+                {
+                    xtype: 'setting-view'
+                }
+            ]
         }
     ]
 });

@@ -84,7 +84,6 @@ Ext.define('FindCafe.view.main.Main', {
     items: [{
         title: '検索',
         iconCls: 'fa-search',
-        // The following grid shares a store with the classic version's grid as well!
         layout: 'fit',
         items: [{
             xtype: 'search-view'
